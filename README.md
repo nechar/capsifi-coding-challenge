@@ -9,9 +9,9 @@ The coding challenge requires the following to be installed on your development 
 
 ### Installation
 
- - Fork the `Wishlist-JavaScript-Coding-Challenge` repository to your personal github account;
- - Clone the `Wishlist-JavaScript-Coding-Challenge` repository from your personal github account onto your development machine;
- - Open a terminal and `cd` into the root directory of the `Wishlist-JavaScript-Coding-Challenge` repository.
+ - Fork the `Wishlist-JavaScript-Coding-Challenge-Nechar` repository to your personal github account;
+ - Clone the `Wishlist-JavaScript-Coding-Challenge-Nechar` repository from your personal github account onto your development machine;
+ - Open a terminal and `cd` into the root directory of the `Wishlist-JavaScript-Coding-Challenge-Nechar` repository.
  - Execute `npm install` in the terminal.
 
 This installation will only give you the Typescript library, it is your responsabilty to create the structure of folders and files that you will need for the challenge. Feel free to include more `scripts` into the `package.json` file, for example to run Typescript in watch mode. E.g : `"watch-ts": "tsc -w"`.
