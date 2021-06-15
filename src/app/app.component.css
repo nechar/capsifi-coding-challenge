@@ -8,3 +8,14 @@
 .card {
   margin: 1rem;
 }
+
+.mat-toolbar {
+  justify-content: space-between;
+}
+
+.btn-liked {
+  color: red;
+}
+.btn-not-liked {
+  color: grey;
+}
