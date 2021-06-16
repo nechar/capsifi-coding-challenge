@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Games } from './interfaces/game.interfaces';
 import { GameService } from './services/games.service';
 
@@ -12,9 +11,11 @@ export class AppComponent implements OnInit {
   isExpanded = true;
   isShowing = false;
 
-  games$: Observable<Games> = this.gameService.getAll();
+  games: Games;
 
   constructor(private gameService: GameService) {}
 
-  ngOnInit(): void {}
+  async ngOnInit(): Promise<void> {
+    this.games = await this.gameService.getAll();
+  }
 }

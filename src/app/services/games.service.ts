@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Games } from '../interfaces/game.interfaces';
+import { Games, Result } from '../interfaces/game.interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -10,12 +10,13 @@ import { Games } from '../interfaces/game.interfaces';
 export class GameService {
   constructor(private httpClient: HttpClient) {}
 
+  allGames: Result[] = [];
   myLikedGames: number[] = [];
 
-  getAll(): Observable<Games> {
-    return this.httpClient.get(
-      `${environment.baseUrl}/collections/must-play/games`
-    ) as Observable<Games>;
+  getAll(): Promise<Games> {
+    return this.httpClient
+      .get(`${environment.baseUrl}/collections/must-play/games`)
+      .toPromise() as Promise<Games>;
   }
 
   toggleLike(id: number): void {

@@ -5,7 +5,7 @@
   </mat-drawer>
 
   <div class="cards">
-    <ng-container *ngFor="let game of (games$ | async).results">
+    <ng-container *ngFor="let game of games.results">
       <app-card [game]="game"></app-card>
     </ng-container>
   </div>
