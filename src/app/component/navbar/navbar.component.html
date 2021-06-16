@@ -1,5 +1,7 @@
-<button mat-button>
-  <mat-icon>delete</mat-icon>
-</button>
-<span>Name</span>
-<mat-divider></mat-divider>
+<ng-container *ngFor="let myGameID of gameService.myLikedGames">
+  <button mat-button (click)="gameService.dislike(myGameID)">
+    <mat-icon>delete</mat-icon>
+  </button>
+  <span>{{ gameService.findById(myGameID).name }}</span>
+  <mat-divider></mat-divider>
+</ng-container>

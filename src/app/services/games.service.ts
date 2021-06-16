@@ -10,17 +10,19 @@ import { Games, Result } from '../interfaces/game.interfaces';
 export class GameService {
   constructor(private httpClient: HttpClient) {}
 
-  allGames: Result[] = [];
+  results: Result[] = [];
   myLikedGames: number[] = [];
 
-  getAll(): Promise<Games> {
-    return this.httpClient
+  async getAll(): Promise<Games> {
+    const games: Games = (await this.httpClient
       .get(`${environment.baseUrl}/collections/must-play/games`)
-      .toPromise() as Promise<Games>;
+      .toPromise()) as Games;
+    this.results = games.results as Result[];
+    return games;
   }
 
   findById(id: number): Result {
-    return this.allGames.find((game) => game.id === id);
+    return this.results.find((game) => game.id === id);
   }
 
   toggleLike(id: number): void {

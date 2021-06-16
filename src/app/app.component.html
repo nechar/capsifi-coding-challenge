@@ -4,7 +4,7 @@
     <app-navbar></app-navbar>
   </mat-drawer>
 
-  <div class="cards">
+  <div class="cards" *ngIf="games">
     <ng-container *ngFor="let game of games.results">
       <app-card [game]="game"></app-card>
     </ng-container>
