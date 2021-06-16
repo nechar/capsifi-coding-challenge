@@ -19,6 +19,10 @@ export class GameService {
       .toPromise() as Promise<Games>;
   }
 
+  findById(id: number): Result {
+    return this.allGames.find((game) => game.id === id);
+  }
+
   toggleLike(id: number): void {
     const index = this.myLikedGames.indexOf(id);
     if (index === -1) {
