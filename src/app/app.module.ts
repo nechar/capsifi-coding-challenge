@@ -9,9 +9,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { CardComponent } from './component/card/card.component';
+import { HeaderComponent } from './component/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NavbarComponent, CardComponent, HeaderComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -21,6 +25,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatIconModule,
     HttpClientModule,
     MatSidenavModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -9,32 +9,12 @@ import { GameService } from './services/games.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  games$: Observable<Games> = this.gameService.getAll();
+  isExpanded = true;
+  isShowing = false;
 
-  myLikedGames: number[] = [];
+  games$: Observable<Games> = this.gameService.getAll();
 
   constructor(private gameService: GameService) {}
 
   ngOnInit(): void {}
-
-  toggleLike(id: number): void {
-    const index = this.myLikedGames.indexOf(id);
-    if (index === -1) {
-      this.myLikedGames.push(id);
-    } else {
-      this.myLikedGames.splice(index, 1);
-    }
-  }
-
-  isLiked(id: number): boolean {
-    const index = this.myLikedGames.indexOf(id);
-    return index !== -1;
-  }
-
-  dislike(id: number): void {
-    const index = this.myLikedGames.indexOf(id);
-    if (index !== -1) {
-      this.myLikedGames.splice(index, 1);
-    }
-  }
 }

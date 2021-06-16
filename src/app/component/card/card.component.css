@@ -1,0 +1,11 @@
+.card {
+  margin: 1rem;
+}
+
+.btn-liked {
+  color: red;
+}
+
+.btn-not-liked {
+  color: grey;
+}

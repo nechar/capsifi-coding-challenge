@@ -1,0 +1,24 @@
+<mat-card class="card">
+  <img mat-card-image src="{{ game.background_image }}" />
+  <mat-card-content>
+    <p>{{ game.name }}</p>
+    <p>{{ game.released | date }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-icon-button
+      class="favorite-icon"
+      aria-label="icon-button with heart icon"
+      (click)="gameService.toggleLike(game.id)"
+    >
+      <mat-icon
+        [ngClass]="{
+          'btn-liked': gameService.isLiked(game.id),
+          'btn-not-liked': !gameService.isLiked(game.id)
+        }"
+        >favorite</mat-icon
+      >
+      Like
+    </button>
+  </mat-card-actions>
+</mat-card>

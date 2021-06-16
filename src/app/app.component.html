@@ -1,40 +1,12 @@
-<mat-toolbar class="mat-toolbar" color="primary">
-  <span>Capsifi</span>
-  <button
-    mat-icon-button
-    class="favorite-icon"
-    aria-label="icon-button with heart icon"
-  >
-    <mat-icon>favorite</mat-icon>
-  </button>
-</mat-toolbar>
+<app-header (expand)="drawer.toggle()"></app-header>
+<mat-drawer-container>
+  <mat-drawer class="drawer" #drawer [position]="'end'">
+    <app-navbar></app-navbar>
+  </mat-drawer>
 
-<div class="cards">
-  <mat-card
-    class="card"
-    *ngFor="let game of (games$ | async).results; let i = index"
-  >
-    <img mat-card-image src="{{ game.background_image }}" />
-    <mat-card-content>
-      <p>{{ game.name }}</p>
-      <p>{{ game.released | date }}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button
-        mat-icon-button
-        class="favorite-icon"
-        aria-label="icon-button with heart icon"
-        (click)="toggleLike(game.id)"
-      >
-        <mat-icon
-          [ngClass]="{
-            'btn-liked': isLiked(game.id),
-            'btn-not-liked': !isLiked(game.id)
-          }"
-          >favorite</mat-icon
-        >
-        Like
-      </button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+  <div class="cards">
+    <ng-container *ngFor="let game of (games$ | async).results">
+      <app-card [game]="game"></app-card>
+    </ng-container>
+  </div>
+</mat-drawer-container>
