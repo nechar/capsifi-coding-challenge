@@ -6,7 +6,8 @@
   </mat-card-content>
   <mat-card-actions>
     <button
-      mat-icon-button
+      mat-button
+      class="action-button"
       aria-label="icon-button with heart icon"
       (click)="gameService.toggleLike(game.id)"
     >
@@ -17,7 +18,6 @@
         }"
         >favorite</mat-icon
       >
-      Like
     </button>
   </mat-card-actions>
 </mat-card>

@@ -9,3 +9,8 @@
 .btn-not-liked {
   color: grey;
 }
+
+.action-button {
+  margin: auto;
+  width: 100%;
+}
